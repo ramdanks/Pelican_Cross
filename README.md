@@ -7,8 +7,8 @@ Pedestrian Light Controlled Crossing.
 - Written in VHDL
 
 ## Developer
-Almamater : Universitas Indonesia
-Major : Computer Engineering
+- Almamater : Universitas Indonesia
+- Major : Computer Engineering
 ### Arief Saferman
 - NPM: 1806148656
 ### Farhan Almasyhur
