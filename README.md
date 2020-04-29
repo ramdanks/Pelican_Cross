@@ -1,12 +1,15 @@
-# Pelican_Cross
-Pedestrian Light Controlled Crossing (in VHD) using FSM
+# Pelican Cross
+Pedestrian Light Controlled Crossing.
+
 
 ## About
+- Using Finite State Machine Concept
+- Written in VHDL
 
 ## Developer
 Almamater : Universitas Indonesia
 ### Arief Saferman
-NPM:
+NPM: 1806148656
 ### Farhan Almasyhur
 NPM: 1806200375
 ### Muhammad Alfi Aldolio
