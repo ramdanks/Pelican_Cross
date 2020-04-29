@@ -1,12 +1,12 @@
 # Pelican_Cross
 Pedestrian Light Controlled Crossing (in VHD) using FSM
 
-#Developer
-##Arief Saferman
+# Developer
+## Arief Saferman
 NPM:
-##Farhan Almasyhur
+## Farhan Almasyhur
 NPM:
-##Muhammad Alfi Aldolio
+## Muhammad Alfi Aldolio
 NPM:
-##Ramadhan Kalih Sewu
+## Ramadhan Kalih Sewu
 NPM: 1806148826
