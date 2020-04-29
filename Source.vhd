@@ -21,8 +21,8 @@ architecture behaviour of PELICAN is
 
 	type LightState is (IDLE, STOP, COUNTDOWN);
 	
-	signal state 		: lampuState := IDLE;
-	signal nextState 	: lampuState := IDLE; 
+	signal state 		: LightState := IDLE;
+	signal nextState 	: LightState := IDLE; 
 
 begin
 
