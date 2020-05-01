@@ -67,16 +67,19 @@ Light : process(pClk,pYellow,state) is begin
 			
 				pYellow <= not pYellow;
 				pRed <= '0';
+				pAlarm <= '0';
 			
 			when STOP =>
 			
 				pRed <= '1';
 				pYellow <= '0';
+				pAlarm <= '1';
 				
 			when COUNTDOWN =>
 			
 				pYellow <= '1';
 				pRed <= '0';
+				pAlarm <= '0';
 		
 		end case;
 	
