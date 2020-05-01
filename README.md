@@ -1,10 +1,14 @@
 # Pelican Cross
 Pedestrian Light Controlled Crossing.
 
+![](assets/PuffinCrossing.jpeg)
 
 ## About
 - Using Finite State Machine Concept
 - Written in VHDL
+
+## Simulation
+![](assets/UnderDev.png)
 
 ## Developer
 - Almamater : Universitas Indonesia
