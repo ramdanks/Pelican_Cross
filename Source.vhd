@@ -51,7 +51,7 @@ Light : process(pClk,pYellow,state) is begin
 
 	if (rising_edge(pClk)) then
 	
-		case state 
+		case state is
 		
 			when IDLE  =>
 							pYellow <= not pYellow;
