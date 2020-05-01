@@ -29,30 +29,20 @@ begin
 
 Control : process(pClk,pButton,counter) is begin
 	
-	if (state = COUNTDOWN and counter <= 0) then
-	
-		nextState <= STOP;
-	
-	elsif (state = STOP and counter <= 0) then
-	
-		nextState <= IDLE;
-	
+	if (state = COUNTDOWN and counter <= 0) then 	nextState <= STOP;
+	elsif (state = STOP and counter <= 0) then 		nextState <= IDLE;
 	end if;
 	
 	if (rising_edge(pClk)) then
-		
-		state <= nextState;
 	
+		state <= nextState;
+		
 	end if;
 	
-	if (pButton = '1') then
-	
-		if (state = IDLE) then
-		
+	if (pButton = '1' and state = IDLE) then
+
 			nextState <= COUNTDOWN;
-		
-		end if;
-	
+
 	end if;
 
 end process;
@@ -61,28 +51,23 @@ Light : process(pClk,pYellow,state) is begin
 
 	if (rising_edge(pClk)) then
 	
-		case state is
+		case state 
 		
 			when IDLE  =>
-			
-				pYellow <= not pYellow;
-				pRed <= '0';
-				pAlarm <= '0';
-			
+							pYellow <= not pYellow;
+							pRed <= '0';
+							pAlarm <= '0';
 			when STOP =>
-			
-				pRed <= '1';
-				pYellow <= '0';
-				pAlarm <= '1';
-				
+							pRed <= '1';
+							pYellow <= '0';
+							pAlarm <= '1';
 			when COUNTDOWN =>
-			
-				pYellow <= '1';
-				pRed <= '0';
-				pAlarm <= '0';
-		
+							pYellow <= '1';
+							pRed <= '0';
+							pAlarm <= '0';
+							
 		end case;
-	
+		
 	end if;
 
 end process;
@@ -90,7 +75,7 @@ end process;
 procCounter : process(pClk,counter) is begin
 
 	if (rising_edge(pClk) and state /= IDLE) then
-		
+
 		if ( counter < 1 ) 	then	counter <= 9;
 		else						counter <= counter - 1;
 		end if;
