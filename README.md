@@ -1,7 +1,7 @@
 # Pelican Cross
 Pedestrian Light Controlled Crossing.
 
-![](assets/PuffinCrossing.jpeg)
+![](assets/PuffinCrossing.jpg)
 
 ## About
 - Using Finite State Machine Concept
