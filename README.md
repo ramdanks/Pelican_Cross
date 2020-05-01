@@ -9,6 +9,12 @@ Pedestrian Light Controlled Crossing.
 
 ## Simulation
 ![](assets/UnderDev.png)
+### FSM State
+``bash
+	type LightState is (IDLE, STOP, COUNTDOWN);
+	signal state 		: LightState := IDLE;
+	signal nextState 	: LightState := IDLE;
+``
 
 ## Developer
 - Almamater : Universitas Indonesia
