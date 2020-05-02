@@ -14,11 +14,14 @@ end timer_1sec;
 --fsm model for 1 second timer_1sec
 architecture fsm of timer_1sec is
 	type state_type is  (idle, high_pulse, low_pulse);
+	-- idle, kondisi ketika timer tidak bekerja sehingga tidak menghitung jumlah clock pulse
+	-- high_pulse, kondisi signal timer di trigger high degan duty cycle 5%
+	-- low_pulse, kondisi menunggu selama 1 detik untuk trigger high yang yang selanjutnya
 	signal current_state, next_state: state_type;
 	signal count_up: std_logic;
-	signal counter: natural range 0 to 999999999 := 0;
+	signal counter: natural range 0 to 99 := 0; -- range yang digunakan untuk menghitung clock
 begin
-
+	-- proses transisi state
 	process (reset, clk) is
 	begin
 		if (reset='1') then
@@ -35,7 +38,7 @@ begin
 		end if;
 	end process;
 	
-	
+	-- mealy state machine
 	process (current_state, counter, start) is
 	begin
 		count_up <= '0';
@@ -53,7 +56,7 @@ begin
 				timer <= '1';
 				if (start='0') then
 					next_state <= idle;
-				elsif (counter < 49999999) then
+				elsif (counter < 4) then --bila nilai frekuensi clock 100 MHz gunakan counter<49999999
 					count_up <= '1';
 					next_state <= high_pulse;
 				else
@@ -64,7 +67,7 @@ begin
 			when low_pulse =>
 				if (start='0') then
 					next_state <= idle;
-				elsif (counter < 99999999) then
+				elsif (counter < 99) then ----bila nilai frekuensi clock 100 MHz gunakan counter<999999999
 					count_up <= '1';
 					next_state <= low_pulse;
 				else
@@ -77,5 +80,4 @@ begin
 	end process;
 		
 end fsm;
-
 
