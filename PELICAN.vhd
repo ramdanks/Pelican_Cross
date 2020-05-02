@@ -61,13 +61,9 @@ Control : process(pClk,pButton,counter) is begin
 	
 	end if;
 	
-	if (pButton = '1') then
-	   
-		if (state = IDLE) then
+	if (pButton = '1' and state = IDLE) then
 		
-			nextState <= COUNTDOWN;
-			
-		end if;
+		nextState <= COUNTDOWN;
 	
 	end if;
 
