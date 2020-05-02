@@ -16,7 +16,7 @@ architecture fsm of timer_1sec is
 	type state_type is  (idle, high_pulse, low_pulse);
 	-- idle, kondisi ketika timer tidak bekerja sehingga tidak menghitung jumlah clock pulse
 	-- high_pulse, kondisi signal timer di trigger high degan duty cycle 5%
-	-- low_pulse, kondisi menunggu selama 1 detik untuk trigger high yang yang selanjutnya
+	-- low_pulse, kondisi menunggu selama 1 detik untuk trigger high yang selanjutnya
 	signal current_state, next_state: state_type;
 	signal count_up: std_logic;
 	signal counter: natural range 0 to 99 := 0; -- range yang digunakan untuk menghitung clock
