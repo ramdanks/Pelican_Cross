@@ -67,7 +67,7 @@ begin
 			when low_pulse =>
 				if (start='0') then
 					next_state <= idle;
-				elsif (counter < 99) then ----bila nilai frekuensi clock 100 MHz gunakan counter<999999999
+				elsif (counter < 99) then --bila nilai frekuensi clock 100 MHz gunakan counter<999999999
 					count_up <= '1';
 					next_state <= low_pulse;
 				else
