@@ -21,7 +21,7 @@ Pedestrian Light Controlled Crossing.
 ```bash
 	type state_type is  (idle, high_pulse, low_pulse);
 	-- idle, kondisi ketika timer tidak bekerja sehingga tidak menghitung jumlah clock pulse
-	-- high_pulse, kondisi signal timer di trigger high degan duty cycle 5%
+	-- high_pulse, kondisi signal timer di trigger high dengan duty cycle 5%
 	-- low_pulse, kondisi menunggu selama 1 detik untuk trigger high yang selanjutnya
 ```
 
