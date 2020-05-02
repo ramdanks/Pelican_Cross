@@ -8,7 +8,8 @@ Pedestrian Light Controlled Crossing.
 - Written in VHDL
 
 ## Simulation
-![](assets/UnderDev.png)
+![](assets/sim.png)
+![](assets/zoom_in_sim.png)
 ### FSM State
 #### Light
 ```bash
