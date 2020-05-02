@@ -56,7 +56,7 @@ begin
 				timer <= '1';
 				if (start='0') then
 					next_state <= idle;
-				elsif (counter < 4) then --bila nilai frekuensi clock 100 MHz gunakan counter<49999999
+				elsif (counter < 5) then --bila nilai frekuensi clock 100 MHz gunakan counter<49999999
 					count_up <= '1';
 					next_state <= high_pulse;
 				else

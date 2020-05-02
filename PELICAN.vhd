@@ -8,7 +8,7 @@ entity PELICAN is
 	(
 		--Input Ports
 		pButton	: in std_logic;
-		pClk	: in std_logic;
+		
 		--Output Ports
 		pAlarm	: out std_logic := '0';
 		pSevseg	: out std_logic_vector( 7 downto 0 ) := "11111111";
@@ -20,16 +20,26 @@ end PELICAN;
 
 architecture behaviour of PELICAN is
 
+component timer_1sec is
+	Port (reset, clk : in std_logic := '0';
+		  start		 : in std_logic := '0';
+		  timer   	 : out std_logic);
+		  
+end component;
+
 	type LightState is (IDLE, STOP, COUNTDOWN);
 	
 	signal state 		: LightState := IDLE;
 	signal nextState 	: LightState := IDLE;
 	signal counter		: integer := 9; 
+	signal pClk			: std_logic;
 	
 	constant pWalk : string (1 to 5) := "GO   "; 
 	constant pStop : string (1 to 5) := "STOP!";
-
+	
 begin
+
+timer_clock: timer_1sec PORT MAP (timer => pClk);
 
 
 
